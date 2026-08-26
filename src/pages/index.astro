@@ -1,17 +1,21 @@
 ---
-
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import MainTitle from "../components/MainTitle";
+import ImageGrid from "../components/ImageGrid";
+import InvitationsList from "../components/InvitationsList.jsx";
+//import InvitationCard from '../components/InvitationCard.jsx';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout>
+	<main class="px-4 pb-12 flex flex-col gap-10">
+		<Header />
+		<MainTitle />
+		<ImageGrid interval={4000} client:load />
+		<section id="invitaciones">
+			<InvitationsList client:load />
+		</section>
+	</main>
+	<Footer />
+</BaseLayout>

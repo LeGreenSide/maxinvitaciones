@@ -1,0 +1,84 @@
+
+[
+  {
+    "id": "spiderman-clemente",
+    "title": "Spider-Man",
+    "description": "El sentido arácnido está en alerta, ¡ven a celebrar con nosotros!",
+    "video": "/videos/spiderman-clemente.mp4",
+    "poster": "/videos/spiderman-clemente.jpg",
+    "bgColor": "#0f172a",
+    "textColor": "#ffffff",
+    "buttonColor": "#dc2626"
+  },
+  {
+    "id": "piratas-marcelino",
+    "title": "Coquimbo Unido",
+    "description": "¡Cumplen los piratas más buscados del Caribe!",
+    "video": "/videos/i_coquimbo_unido.mp4",
+    "poster": "/videos/piratas.jpg",
+    "bgColor": "#78350f99",
+    "textColor": "#fff",
+    "buttonColor": "#f59e0b"
+  },
+  {
+    "id": "plim-plim",
+    "title": "Plim Plim",
+    "description": "¡Te esperamos en esta fiesta llena de diversión!",
+    "video": "/videos/plim-plim.mp4",
+    "poster": "/videos/plim-plim.jpg",
+    "bgColor": "#0891b2",
+    "textColor": "#ffffff",
+    "buttonColor": "#f97316"
+  },
+  {
+    "id": "real-madrid",
+    "title": "Real Madrid",
+    "description": "¡Te esperamos en esta fiesta llena de diversión!",
+    "video": "/videos/plim-plim.mp4",
+    "poster": "/videos/plim-plim.jpg",
+    "bgColor": "#0891b2",
+    "textColor": "#ffffff",
+    "buttonColor": "#f97316"
+  },
+  {
+    "id": "colo-colo",
+    "title": "Colo-Colo",
+    "description": "¡Te esperamos en esta fiesta llena de diversión!",
+    "video": "/videos/plim-plim.mp4",
+    "poster": "/videos/plim-plim.jpg",
+    "bgColor": "#0891b2",
+    "textColor": "#ffffff",
+    "buttonColor": "#f97316"
+  },
+  {
+    "id": "colo-colo2",
+    "title": "Colo-Colo",
+    "description": "¡Te esperamos en esta fiesta llena de diversión!",
+    "video": "/videos/plim-plim.mp4",
+    "poster": "/videos/plim-plim.jpg",
+    "bgColor": "#0891b2",
+    "textColor": "#ffffff",
+    "buttonColor": "#f97316"
+  },
+  {
+    "id": "colo-colo3",
+    "title": "Colo-Colo",
+    "description": "¡Te esperamos en esta fiesta llena de diversión!",
+    "video": "/videos/plim-plim.mp4",
+    "poster": "/videos/plim-plim.jpg",
+    "bgColor": "#0891b2",
+    "textColor": "#ffffff",
+    "buttonColor": "#f97316"
+  },
+  {
+    "id": "colo-colo4",
+    "title": "Colo-Colo",
+    "description": "¡Te esperamos en esta fiesta llena de diversión!",
+    "video": "/videos/plim-plim.mp4",
+    "poster": "/videos/plim-plim.jpg",
+    "bgColor": "#0891b2",
+    "textColor": "#ffffff",
+    "buttonColor": "#f97316"
+  }
+
+]
