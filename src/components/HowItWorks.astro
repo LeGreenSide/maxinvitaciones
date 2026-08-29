@@ -1,0 +1,264 @@
+---
+const pasos = [
+    { n: "01", titulo: "Eliges tu invitación" },
+    { n: "02", titulo: "Nos pasas los datos" },
+    { n: "03", titulo: "Te llega lista" },
+];
+---
+
+<section id="como" class="bg-papel-calido px-5 py-14 sm:px-8 md:py-18 lg:px-20">
+    <div class="mx-auto mb-10 flex max-w-[1000px] items-center gap-3 sm:gap-5">
+        <h2 class="titular text-4xl md:text-5xl lg:text-[54px]">
+            Cómo funciona
+        </h2>
+        <img
+            src="/mascotas/what.png"
+            alt=""
+            width="128"
+            height="128"
+            loading="lazy"
+            aria-hidden="true"
+            class="mascota-duda h-14 w-14 shrink-0 md:h-[72px] md:w-[72px]"
+        />
+    </div>
+
+    <div
+        class="mx-auto flex max-w-[1000px] flex-col items-center gap-12 md:flex-row md:items-center md:justify-center md:gap-16 lg:gap-20"
+    >
+        <div class="iphone relative w-full max-w-[300px] shrink-0 lg:max-w-[340px]">
+            <div
+                class="pointer-events-none absolute -bottom-6 -left-6 h-full w-full rounded-[3.2rem] bg-acento/30"
+                aria-hidden="true"
+            >
+            </div>
+
+            <span class="boton-lateral izq top-[23%] h-8" aria-hidden="true"
+            ></span>
+            <span class="boton-lateral izq top-[33%] h-14" aria-hidden="true"
+            ></span>
+            <span class="boton-lateral izq top-[47%] h-14" aria-hidden="true"
+            ></span>
+            <span class="boton-lateral der top-[37%] h-20" aria-hidden="true"
+            ></span>
+
+            <div
+                class="relative rounded-[3.1rem] bg-linear-to-b from-[#3a3550] to-[#15111f] p-[3px] shadow-[0_26px_60px_rgba(26,21,51,0.34)]"
+            >
+                <div
+                    class="relative overflow-hidden rounded-[2.95rem] bg-tinta p-[9px]"
+                >
+                    <div
+                        class="relative overflow-hidden rounded-[2.35rem] bg-papel"
+                    >
+                        <video
+                            id="video-como"
+                            src="/videos/como-funciona.mp4"
+                            poster="/videos/como-funciona.jpg"
+                            width="720"
+                            height="1280"
+                            muted
+                            loop
+                            playsinline
+                            preload="none"
+                            aria-label="Animación: eliges la invitación en el catálogo, envías los datos por WhatsApp y te llega el video listo"
+                            class="block aspect-9/16 w-full object-cover"></video>
+
+                        <span
+                            class="absolute left-1/2 top-[10px] h-[22px] w-[76px] -translate-x-1/2 rounded-full bg-black"
+                            aria-hidden="true"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="pointer-events-none absolute inset-x-2 bottom-6 md:hidden"
+                aria-hidden="true"
+            >
+                {
+                    pasos.map((paso, i) => (
+                        <div
+                            class="globo absolute inset-x-0 flex items-center justify-center gap-2.5 rounded-full bg-papel/95 px-4 py-2.5 shadow-[0_8px_24px_rgba(26,21,51,0.28)]"
+                            data-paso={i}
+                        >
+                            <span class="titular flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-acento text-[12px] text-tinta">
+                                {paso.n}
+                            </span>
+                            <span class="titular text-[17px] leading-none">
+                                {paso.titulo}
+                            </span>
+                        </div>
+                    ))
+                }
+            </div>
+        </div>
+
+        <ol class="hidden w-full max-w-[460px] flex-col md:flex">
+            {
+                pasos.map((paso, i) => (
+                    <li
+                        class="paso relative flex items-center gap-5 pb-11 last:pb-0"
+                        data-paso={i}
+                    >
+                        <span class="circulo titular" aria-hidden="true">
+                            {paso.n}
+                        </span>
+                        <h3 class="titular text-[30px] lg:text-[38px]">
+                            {paso.titulo}
+                        </h3>
+                    </li>
+                ))
+            }
+        </ol>
+    </div>
+</section>
+
+<style>
+    .boton-lateral {
+        position: absolute;
+        width: 3px;
+        border-radius: 999px;
+        background: linear-gradient(
+            to bottom,
+            #3a3550,
+            #221d33
+        );
+    }
+    .boton-lateral.izq {
+        left: -3px;
+    }
+    .boton-lateral.der {
+        right: -3px;
+    }
+
+    .mascota-duda {
+        animation: dudar 3.4s ease-in-out infinite;
+        transform-origin: 50% 90%;
+    }
+    @keyframes dudar {
+        0%,
+        58%,
+        100% {
+            transform: rotate(-5deg);
+        }
+        70% {
+            transform: rotate(6deg) translateY(-4px);
+        }
+        84% {
+            transform: rotate(-2deg);
+        }
+    }
+
+    .globo {
+        opacity: 0;
+        transform: translateY(10px);
+        transition:
+            opacity 0.4s ease,
+            transform 0.4s ease;
+    }
+    .globo.activo {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .circulo {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        height: 56px;
+        width: 56px;
+        flex-shrink: 0;
+        align-items: center;
+        justify-content: center;
+        border-radius: 999px;
+        border: 2px solid rgba(26, 21, 51, 0.18);
+        background-color: var(--color-papel-calido);
+        font-size: 16px;
+        letter-spacing: 0.04em;
+        color: rgba(26, 21, 51, 0.68);
+        transition:
+            background-color 0.45s ease,
+            border-color 0.45s ease,
+            color 0.45s ease,
+            transform 0.45s ease;
+    }
+
+    .paso:not(:last-child)::before {
+        content: "";
+        position: absolute;
+        left: 27px;
+        top: 62px;
+        bottom: 14px;
+        width: 2px;
+        background-color: rgba(26, 21, 51, 0.14);
+        transition: background-color 0.45s ease;
+    }
+
+    .paso.cumplido .circulo {
+        border-color: var(--color-tinta);
+        background-color: var(--color-tinta);
+        color: var(--color-papel);
+    }
+    .paso.cumplido::before {
+        background-color: var(--color-tinta);
+    }
+
+    .paso.activo .circulo {
+        border-color: var(--color-acento);
+        background-color: var(--color-acento);
+        color: var(--color-tinta);
+        transform: scale(1.12);
+    }
+    .paso.activo h3 {
+        color: var(--color-tinta);
+    }
+    .paso:not(.activo):not(.cumplido) h3 {
+        color: rgba(26, 21, 51, 0.75);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .circulo {
+            transition: none;
+        }
+    }
+</style>
+
+<script>
+    const video = document.getElementById("video-como") as HTMLVideoElement | null;
+    const pasos = Array.from(document.querySelectorAll<HTMLElement>(".paso"));
+    const globos = Array.from(document.querySelectorAll<HTMLElement>(".globo"));
+
+    if (video && pasos.length) {
+        const marcar = () => {
+            const total = video.duration;
+            if (!Number.isFinite(total) || total === 0) return;
+            const actual = Math.min(
+                Math.floor((video.currentTime / total) * pasos.length),
+                pasos.length - 1,
+            );
+            pasos.forEach((paso, i) => {
+                paso.classList.toggle("activo", i === actual);
+                paso.classList.toggle("cumplido", i < actual);
+            });
+            globos.forEach((globo, i) =>
+                globo.classList.toggle("activo", i === actual),
+            );
+        };
+
+        video.addEventListener("timeupdate", marcar);
+
+        const observer = new IntersectionObserver(
+            (entradas) => {
+                entradas.forEach((entrada) => {
+                    if (entrada.isIntersecting) {
+                        video.play().catch(() => {});
+                    } else {
+                        video.pause();
+                    }
+                });
+            },
+            { threshold: 0.35 },
+        );
+
+        observer.observe(video);
+    }
+</script>

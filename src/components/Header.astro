@@ -1,47 +1,66 @@
+---
+import IconWhatsApp from "./IconWhatsApp.astro";
+import IconInstagram from "./IconInstagram.astro";
+import IconTikTok from "./IconTikTok.astro";
 
-<div
-    class="w-full flex items-center justify-between px-4 sm:px-6 py-4"
->
-    <a href="/" class="flex items-center gap-2 -ml-4">
-        <img
-            src="/max_invi.png"
-            alt="Max Invitaciones"
-            width="1774"
-            height="887"
-            class="h-20 md:h-24 w-auto"
-        />
-    </a>
+const whatsapp =
+    "https://wa.me/56987401906?text=" +
+    encodeURIComponent("Hola! Quiero cotizar una invitación digital 🎉");
+---
 
-    <div class="flex items-center gap-4">
-        <a
-            href="https://instagram.com/tu_usuario"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Instagram"
-        >
+<header class="px-5 py-4 sm:px-8 lg:px-20">
+    <div class="flex items-center justify-between gap-3 sm:gap-6">
+        <a href="/" class="flex items-center">
             <img
-                src="/instagram.png"
-                alt="instagram"
-                width="512"
-                height="512"
-                loading="lazy"
-                class="h-9 md:h-11 w-auto"
+                src="/max_invi.webp"
+                alt="Max Invitaciones"
+                width="1774"
+                height="887"
+                class="h-10 w-auto shrink-0 self-start sm:h-16 lg:h-[68px]"
             />
         </a>
-        <a
-            href="https://tiktok.com/@tu_usuario"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="TikTok"
-        >
-            <img
-                src="/tik-tok.png"
-                alt="tik-tok"
-                width="512"
-                height="512"
-                loading="lazy"
-                class="h-8 md:h-10 w-auto"
-            />
-        </a>
+
+        <nav class="flex items-center gap-3 sm:gap-6 lg:gap-8">
+            <a
+                href="#invitaciones"
+                class="whitespace-nowrap text-[13px] font-medium transition-colors hover:text-acento-rosa sm:text-[15px]"
+                >Invitaciones</a
+            >
+            <a
+                href="#como"
+                class="whitespace-nowrap text-[13px] font-medium transition-colors hover:text-acento-rosa sm:text-[15px]"
+                >Cómo funciona</a
+            >
+
+            <div class="flex items-center gap-2">
+                <a
+                    href={whatsapp}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Escríbenos por WhatsApp"
+                    class="flex h-11 w-11 items-center justify-center rounded-full bg-linear-to-b from-[#14c063] to-wasap-oscuro text-white shadow-[0_4px_12px_rgba(18,176,90,0.30)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_8px_18px_rgba(18,176,90,0.42)]"
+                >
+                    <IconWhatsApp class="h-[22px] w-[22px]" />
+                </a>
+                <a
+                    href="https://www.instagram.com/max_invitaciones"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Instagram"
+                    class="hidden h-11 w-11 items-center justify-center rounded-full border-[1.5px] border-tinta/20 transition-all duration-200 hover:-translate-y-0.5 hover:border-acento-rosa hover:text-acento-rosa sm:flex"
+                >
+                    <IconInstagram class="h-[21px] w-[21px]" />
+                </a>
+                <a
+                    href="https://www.tiktok.com/@maxinvitaciones"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="TikTok"
+                    class="hidden h-11 w-11 items-center justify-center rounded-full border-[1.5px] border-tinta/20 transition-all duration-200 hover:-translate-y-0.5 hover:border-acento-rosa hover:text-acento-rosa sm:flex"
+                >
+                    <IconTikTok class="h-[19px] w-[19px]" />
+                </a>
+            </div>
+        </nav>
     </div>
-</div>
+</header>

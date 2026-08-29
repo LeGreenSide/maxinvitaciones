@@ -26,14 +26,11 @@ const ogImageURL = new URL(image, Astro.site);
         <meta name="description" content={description} />
         <link rel="canonical" href={canonicalURL} />
 
-        <!-- Favicons -->
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/site.webmanifest" />
-        <meta name="theme-color" content="#172554" />
+        <meta name="theme-color" content="#faf4ea" />
 
-        <!-- Open Graph, para cuando compartan el link en WhatsApp/redes -->
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         <meta property="og:type" content="website" />
@@ -42,13 +39,11 @@ const ogImageURL = new URL(image, Astro.site);
         <meta property="og:site_name" content="Max Invitaciones" />
         <meta property="og:locale" content="es_CL" />
 
-        <!-- Twitter Card -->
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
         <meta name="twitter:image" content={ogImageURL} />
 
-        <!-- Datos estructurados -->
         <script type="application/ld+json" set:html={JSON.stringify({
             "@context": "https://schema.org",
             "@type": "LocalBusiness",
@@ -60,19 +55,16 @@ const ogImageURL = new URL(image, Astro.site);
             "priceRange": "$$",
         })} />
 
-        <!-- Fuentes -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 
         <title>{title}</title>
     </head>
-    <body class="bg-blue-100 text-blue-950 antialiased">
+    <body class="bg-papel text-tinta antialiased">
         <BackgroundDecor />
         <div class="relative z-10">
             <slot />
         </div>
-
-        <!-- acá se inyecta TODO el contenido de la página -->
     </body>
 </html>

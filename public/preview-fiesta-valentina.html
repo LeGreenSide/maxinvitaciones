@@ -1,0 +1,622 @@
+<title>Fiesta de Valentina</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:ital,wght@0,500;0,700;0,800;1,700&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --sky-top: #BFE9F7;
+    --sky-bottom: #E8F7EE;
+    --hill-far: #A9DD86;
+    --hill-near: #7FBE4F;
+    --hill-line: #5FA036;
+    --pink: #F2679E;
+    --pink-deep: #D94C86;
+    --sun: #FFC93C;
+    --sun-deep: #F2A93C;
+    --mud: #8B5A2B;
+    --mud-deep: #6E4520;
+    --card: #FFF9EE;
+    --card-edge: #FBE9C6;
+    --ink: #3E2A22;
+    --ink-soft: #6B5644;
+    --white: #FFFFFF;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    background: linear-gradient(180deg, var(--sky-top) 0%, var(--sky-bottom) 62%, var(--hill-far) 63%, var(--hill-near) 100%);
+    font-family: "Nunito", ui-sans-serif, system-ui, sans-serif;
+    color: var(--ink);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: clamp(20px, 5vw, 56px) 16px 64px;
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+    }
+  }
+
+  /* ---------- background scene ---------- */
+
+  .scene {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+  }
+
+  .sun {
+    position: absolute;
+    top: 6%;
+    right: 10%;
+    width: 128px;
+    height: 128px;
+  }
+  .sun-core {
+    position: absolute;
+    inset: 22px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 38% 32%, #FFE68A, var(--sun) 60%, var(--sun-deep) 100%);
+    box-shadow: 0 0 40px rgba(255, 201, 60, 0.55);
+  }
+  .sun-rays {
+    position: absolute;
+    inset: 0;
+    animation: spin 40s linear infinite;
+  }
+  .sun-rays span {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 4px;
+    height: 20px;
+    border-radius: 3px;
+    background: var(--sun);
+    opacity: 0.6;
+    transform-origin: 2px 64px;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  .cloud {
+    position: absolute;
+    background: var(--white);
+    border-radius: 100px;
+    opacity: 0.85;
+    filter: drop-shadow(0 6px 0 rgba(255,255,255,0.4));
+    animation: drift 60s linear infinite;
+  }
+  .cloud::before, .cloud::after {
+    content: "";
+    position: absolute;
+    background: var(--white);
+    border-radius: 50%;
+  }
+  .cloud-a { width: 84px; height: 30px; top: 12%; left: -120px; animation-duration: 70s; }
+  .cloud-a::before { width: 46px; height: 46px; top: -22px; left: 10px; }
+  .cloud-a::after { width: 34px; height: 34px; top: -14px; left: 46px; }
+  .cloud-b { width: 60px; height: 22px; top: 24%; left: -80px; animation-duration: 50s; animation-delay: -20s; }
+  .cloud-b::before { width: 32px; height: 32px; top: -16px; left: 6px; }
+  .cloud-b::after { width: 24px; height: 24px; top: -10px; left: 32px; }
+  @keyframes drift { from { transform: translateX(0); } to { transform: translateX(140vw); } }
+
+  .hill-line {
+    position: absolute;
+    left: 0; right: 0;
+    height: 4px;
+    background: var(--hill-line);
+    opacity: 0.5;
+  }
+
+  /* ---------- footprint trail ---------- */
+
+  .trail {
+    position: absolute;
+    z-index: 1;
+    width: 26px;
+    height: 26px;
+    opacity: 0.55;
+  }
+  .trail svg { width: 100%; height: 100%; }
+
+  /* ---------- invitation card ---------- */
+
+  .invite {
+    position: relative;
+    z-index: 2;
+    width: min(420px, 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 22px;
+  }
+
+  .badge-row {
+    display: flex;
+    justify-content: center;
+    animation: pop-in 0.7s cubic-bezier(.34,1.56,.64,1) both;
+  }
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 18px;
+    background: var(--white);
+    border-radius: 999px;
+    box-shadow: 0 3px 0 var(--card-edge);
+    font-family: "Nunito", sans-serif;
+    font-weight: 800;
+    font-size: 12.5px;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--pink-deep);
+  }
+  .eyebrow .snout {
+    width: 16px;
+    height: 12px;
+    background: var(--pink);
+    border-radius: 50% 50% 45% 45%;
+    position: relative;
+    flex-shrink: 0;
+  }
+  .eyebrow .snout::before,
+  .eyebrow .snout::after {
+    content: "";
+    position: absolute;
+    width: 3px;
+    height: 4px;
+    background: var(--pink-deep);
+    border-radius: 50%;
+    top: 4px;
+  }
+  .eyebrow .snout::before { left: 3px; }
+  .eyebrow .snout::after { right: 3px; }
+
+  .card {
+    position: relative;
+    width: 100%;
+    background: var(--card);
+    border-radius: 28px;
+    padding: 34px 26px 30px;
+    box-shadow: 0 22px 40px -18px rgba(110, 69, 32, 0.35), 0 2px 0 var(--card-edge);
+    text-align: center;
+    animation: pop-in 0.8s cubic-bezier(.34,1.56,.64,1) both;
+    animation-delay: 0.08s;
+  }
+
+  .card::before {
+    content: "";
+    position: absolute;
+    top: -12px;
+    left: 18px;
+    right: 18px;
+    height: 24px;
+    background-image: radial-gradient(circle at 12px 12px, var(--sky-bottom) 11px, transparent 11.5px);
+    background-size: 24px 24px;
+    background-repeat: repeat-x;
+  }
+
+  @keyframes pop-in {
+    0% { opacity: 0; transform: translateY(18px) scale(0.96); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
+  }
+
+  .name {
+    font-family: "Baloo 2", ui-rounded, "Nunito", sans-serif;
+    font-weight: 800;
+    font-size: clamp(2.4rem, 9vw, 3.1rem);
+    line-height: 1;
+    color: var(--pink-deep);
+    text-wrap: balance;
+    margin: 0;
+    text-shadow: 0 3px 0 rgba(255,255,255,0.6);
+  }
+
+  .rosette {
+    width: 96px;
+    margin: 6px auto 4px;
+    position: relative;
+  }
+  .rosette-medal {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 30%, #FFE38F, var(--sun) 55%, var(--sun-deep) 100%);
+    border: 5px solid var(--white);
+    box-shadow: 0 6px 0 rgba(139,90,43,0.18);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .rosette-medal .num {
+    font-family: "Baloo 2", sans-serif;
+    font-weight: 800;
+    font-size: 2.6rem;
+    line-height: 0.9;
+    color: var(--pink-deep);
+  }
+  .rosette-medal .label {
+    font-family: "Nunito", sans-serif;
+    font-weight: 800;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    color: var(--ink-soft);
+    margin-top: 2px;
+  }
+  .rosette-tails {
+    position: absolute;
+    top: 76px;
+    left: 50%;
+    width: 60px;
+    height: 40px;
+    transform: translateX(-50%);
+    z-index: -1;
+  }
+  .rosette-tails span {
+    position: absolute;
+    top: 0;
+    width: 18px;
+    height: 42px;
+    background: var(--pink);
+  }
+  .rosette-tails span:first-child {
+    left: 6px;
+    transform: rotate(8deg);
+    clip-path: polygon(0 0, 100% 0, 100% 78%, 50% 100%, 0 78%);
+  }
+  .rosette-tails span:last-child {
+    right: 6px;
+    transform: rotate(-8deg);
+    clip-path: polygon(0 0, 100% 0, 100% 78%, 50% 100%, 0 78%);
+  }
+
+  .tagline {
+    font-size: 15.5px;
+    font-weight: 700;
+    color: var(--ink-soft);
+    max-width: 30ch;
+    margin: 2px auto 0;
+    line-height: 1.45;
+  }
+  .tagline strong { color: var(--pink-deep); }
+
+  /* ---------- video puddle frame ---------- */
+
+  .puddle-wrap {
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+    margin: 6px auto 2px;
+    aspect-ratio: 1 / 0.86;
+  }
+
+  .ripple {
+    position: absolute;
+    inset: 0;
+    border-radius: 58% 42% 51% 49% / 45% 40% 60% 55%;
+    border: 2px solid var(--pink);
+    opacity: 0;
+    animation: ripple 3.6s ease-out infinite;
+  }
+  .ripple.r2 { animation-delay: 1.2s; }
+  .ripple.r3 { animation-delay: 2.4s; }
+  @keyframes ripple {
+    0% { transform: scale(0.86); opacity: 0.5; }
+    100% { transform: scale(1.18); opacity: 0; }
+  }
+
+  .puddle {
+    position: absolute;
+    inset: 10%;
+    border-radius: 58% 42% 51% 49% / 45% 40% 60% 55%;
+    overflow: hidden;
+    background: linear-gradient(160deg, #BFE9F7 0%, #6FB8DE 55%, #3E8FBF 100%);
+    box-shadow: inset 0 -14px 26px rgba(20, 70, 100, 0.35), 0 14px 26px -10px rgba(62, 143, 191, 0.55);
+  }
+
+  .puddle .p-hill {
+    position: absolute;
+    left: -10%;
+    right: -10%;
+    bottom: -8%;
+    height: 46%;
+    background: var(--hill-near);
+    border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+  }
+  .puddle .p-sun {
+    position: absolute;
+    top: 14%;
+    right: 18%;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: var(--sun);
+    box-shadow: 0 0 16px rgba(255,201,60,0.7);
+  }
+  .puddle .p-pig {
+    position: absolute;
+    left: 50%;
+    bottom: 40%;
+    width: 34px;
+    height: 26px;
+    transform: translateX(-50%) rotate(-8deg);
+  }
+  .puddle .p-pig-body {
+    position: absolute;
+    inset: 0;
+    background: var(--pink);
+    border-radius: 60% 60% 55% 55%;
+  }
+  .puddle .p-pig-leg {
+    position: absolute;
+    bottom: -6px;
+    width: 6px;
+    height: 10px;
+    background: var(--pink-deep);
+    border-radius: 3px;
+  }
+  .puddle .p-pig-leg.l { left: 4px; }
+  .puddle .p-pig-leg.r { right: 4px; }
+  .puddle .splash {
+    position: absolute;
+    left: 50%;
+    bottom: 36%;
+    width: 4px;
+    height: 4px;
+    background: var(--white);
+    border-radius: 50%;
+    opacity: 0.9;
+  }
+  .splash.s1 { transform: translate(-26px, 0); animation: fly 2.2s ease-in-out infinite; }
+  .splash.s2 { transform: translate(-8px, -6px); width: 3px; height: 3px; animation: fly 2.2s ease-in-out infinite 0.3s; }
+  .splash.s3 { transform: translate(14px, -4px); animation: fly 2.2s ease-in-out infinite 0.6s; }
+  .splash.s4 { transform: translate(28px, 2px); width: 3px; height: 3px; animation: fly 2.2s ease-in-out infinite 0.9s; }
+  @keyframes fly {
+    0%, 100% { opacity: 0.2; }
+    50% { opacity: 1; }
+  }
+
+  .play {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.92);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 16px rgba(20,70,100,0.35);
+  }
+  .play::after {
+    content: "";
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 9px 0 9px 15px;
+    border-color: transparent transparent transparent var(--pink-deep);
+    margin-left: 4px;
+  }
+
+  .puddle-caption {
+    margin-top: 10px;
+    font-size: 11.5px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    opacity: 0.75;
+  }
+
+  /* ---------- details ---------- */
+
+  .details {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 4px;
+  }
+
+  .detail {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--white);
+    border-radius: 16px;
+    padding: 12px 16px;
+    box-shadow: 0 2px 0 var(--card-edge);
+    text-align: left;
+  }
+
+  .detail .icon {
+    flex-shrink: 0;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: #FDECF3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .detail .icon svg { width: 17px; height: 17px; }
+
+  .detail .label {
+    font-size: 10.5px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    opacity: 0.7;
+  }
+  .detail .value {
+    font-weight: 800;
+    font-size: 15px;
+    font-variant-numeric: tabular-nums;
+    color: var(--ink);
+  }
+
+  .rsvp {
+    position: relative;
+    margin-top: 6px;
+    width: 100%;
+    border: none;
+    border-radius: 999px;
+    padding: 16px 24px;
+    background: var(--pink);
+    color: var(--white);
+    font-family: "Baloo 2", sans-serif;
+    font-weight: 700;
+    font-size: 17px;
+    letter-spacing: 0.02em;
+    cursor: pointer;
+    box-shadow: 0 6px 0 var(--pink-deep);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    overflow: hidden;
+  }
+  .rsvp:hover, .rsvp:focus-visible {
+    transform: translateY(2px);
+    box-shadow: 0 4px 0 var(--pink-deep);
+  }
+  .rsvp:active {
+    transform: translateY(6px);
+    box-shadow: 0 0 0 var(--pink-deep);
+  }
+  .rsvp:focus-visible {
+    outline: 3px solid var(--sun-deep);
+    outline-offset: 3px;
+  }
+
+  .credit {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--ink-soft);
+    opacity: 0.55;
+    letter-spacing: 0.03em;
+  }
+</style>
+
+<div class="scene" aria-hidden="true">
+  <div class="cloud cloud-a"></div>
+  <div class="cloud cloud-b"></div>
+  <div class="sun">
+    <div class="sun-rays" id="sunRays"></div>
+    <div class="sun-core"></div>
+  </div>
+  <div class="hill-line" style="top: 62%;"></div>
+
+  <div class="trail" style="top: 34%; left: 8%;">
+    <svg viewBox="0 0 24 24"><ellipse cx="12" cy="12" rx="6" ry="9" fill="#6E4520" opacity="0.35"/></svg>
+  </div>
+  <div class="trail" style="top: 46%; left: 16%; transform: rotate(18deg) scale(0.85);">
+    <svg viewBox="0 0 24 24"><ellipse cx="12" cy="12" rx="6" ry="9" fill="#6E4520" opacity="0.3"/></svg>
+  </div>
+  <div class="trail" style="top: 58%; left: 82%; transform: rotate(-14deg) scale(0.8);">
+    <svg viewBox="0 0 24 24"><ellipse cx="12" cy="12" rx="6" ry="9" fill="#6E4520" opacity="0.28"/></svg>
+  </div>
+</div>
+
+<main class="invite">
+  <div class="badge-row">
+    <span class="eyebrow"><span class="snout"></span>Fiesta en la granja</span>
+  </div>
+
+  <section class="card">
+    <p class="name">VALENTINA</p>
+
+    <div class="rosette">
+      <div class="rosette-tails"><span></span><span></span></div>
+      <div class="rosette-medal">
+        <span class="num">8</span>
+        <span class="label">AÑOS</span>
+      </div>
+    </div>
+
+    <p class="tagline">Te invito a celebrar mi cumpleaños saltando en charcos, comiendo torta y bailando ¡sin parar!</p>
+
+    <div class="puddle-wrap">
+      <div class="ripple r1"></div>
+      <div class="ripple r2"></div>
+      <div class="ripple r3"></div>
+      <div class="puddle">
+        <div class="p-sun"></div>
+        <div class="p-hill"></div>
+        <div class="p-pig">
+          <div class="p-pig-leg l"></div>
+          <div class="p-pig-leg r"></div>
+          <div class="p-pig-body"></div>
+        </div>
+        <span class="splash s1"></span>
+        <span class="splash s2"></span>
+        <span class="splash s3"></span>
+        <span class="splash s4"></span>
+        <div class="play"></div>
+      </div>
+    </div>
+    <p class="puddle-caption">Aquí va tu video de invitación</p>
+
+    <div class="details">
+      <div class="detail">
+        <span class="icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#D94C86" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M8 3v4M16 3v4M3 10h18"/></svg>
+        </span>
+        <span>
+          <span class="label">Fecha</span><br>
+          <span class="value">Sábado 12 de septiembre</span>
+        </span>
+      </div>
+      <div class="detail">
+        <span class="icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#D94C86" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        </span>
+        <span>
+          <span class="label">Hora</span><br>
+          <span class="value">16:00 hrs</span>
+        </span>
+      </div>
+      <div class="detail">
+        <span class="icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#D94C86" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.6 7-11.5A7 7 0 0 0 5 9.5C5 14.4 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.4"/></svg>
+        </span>
+        <span>
+          <span class="label">Lugar</span><br>
+          <span class="value">Quinta Las Lomas</span>
+        </span>
+      </div>
+    </div>
+
+    <button class="rsvp" type="button">Confirmar asistencia</button>
+  </section>
+
+  <p class="credit">Concepto de invitación · Max Invitaciones</p>
+</main>
+
+<script>
+  const rays = document.getElementById('sunRays');
+  if (rays) {
+    const total = 12;
+    for (let i = 0; i < total; i++) {
+      const ray = document.createElement('span');
+      ray.style.transform = `rotate(${(360 / total) * i}deg)`;
+      rays.appendChild(ray);
+    }
+  }
+</script>

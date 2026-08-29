@@ -1,16 +1,55 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <BaseLayout title="Página no encontrada | Max Invitaciones" description="La página que buscas no existe.">
-	<main class="px-4 py-24 flex flex-col items-center justify-center gap-6 text-center min-h-[60vh]">
-		<h1 class="text-4xl font-bold">404</h1>
-		<p class="text-lg text-blue-950/70">No encontramos la página que buscas.</p>
+	<Header />
+	<main
+		class="flex min-h-[60vh] flex-col items-center justify-center gap-5 px-5 py-24 text-center"
+	>
+		<h1 class="titular text-6xl md:text-7xl">404</h1>
+
+		<img
+			src="/mascotas/tears.png"
+			alt=""
+			width="256"
+			height="262"
+			aria-hidden="true"
+			class="mascota-404 h-28 w-auto md:h-32"
+		/>
+
+		<p class="text-lg text-tinta-2">
+			No encontramos la página que buscas.
+		</p>
 		<a
 			href="/"
-			class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-full shadow-lg transition-colors"
+			class="flex h-14 items-center rounded-full bg-wasap px-8 text-[17px] font-semibold text-white transition-colors hover:bg-wasap-oscuro"
 		>
 			Volver al inicio
 		</a>
 	</main>
+	<Footer />
 </BaseLayout>
+
+<style>
+	.mascota-404 {
+		animation: pena 5s ease-in-out infinite;
+		transform-origin: 50% 92%;
+	}
+	@keyframes pena {
+		0%,
+		100% {
+			transform: rotate(-3deg) translateY(0);
+		}
+		50% {
+			transform: rotate(3deg) translateY(2px);
+		}
+	}
+	@media (prefers-reduced-motion: reduce) {
+		.mascota-404 {
+			animation: none;
+		}
+	}
+</style>

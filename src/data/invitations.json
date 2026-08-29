@@ -1,84 +1,122 @@
-
 [
-  {
-    "id": "spiderman-clemente",
-    "title": "Spider-Man",
-    "description": "El sentido arácnido está en alerta, ¡ven a celebrar con nosotros!",
-    "video": "/videos/spiderman-clemente.mp4",
-    "poster": "/videos/spiderman-clemente.jpg",
-    "bgColor": "#0f172a",
-    "textColor": "#ffffff",
-    "buttonColor": "#dc2626"
-  },
   {
     "id": "piratas-marcelino",
     "title": "Coquimbo Unido",
     "description": "¡Cumplen los piratas más buscados del Caribe!",
-    "video": "/videos/i_coquimbo_unido.mp4",
-    "poster": "/videos/piratas.jpg",
-    "bgColor": "#78350f99",
-    "textColor": "#fff",
-    "buttonColor": "#f59e0b"
+    "category": "futbol",
+    "tipo": "completa",
+    "video": "/videos/coquimbo-unido.mp4",
+    "poster": "/videos/coquimbo-unido.jpg",
+    "bgColor": "#677b57"
   },
   {
-    "id": "plim-plim",
-    "title": "Plim Plim",
-    "description": "¡Te esperamos en esta fiesta llena de diversión!",
-    "video": "/videos/plim-plim.mp4",
-    "poster": "/videos/plim-plim.jpg",
-    "bgColor": "#0891b2",
-    "textColor": "#ffffff",
-    "buttonColor": "#f97316"
+    "id": "hello-kitty",
+    "title": "Hello Kitty",
+    "description": "¡Una fiesta adorable está por comenzar!",
+    "category": "infantil",
+    "tipo": "completa",
+    "video": "/videos/hello-kitty.mp4",
+    "poster": "/videos/hello-kitty.jpg",
+    "bgColor": "#6dafbc"
   },
   {
-    "id": "real-madrid",
-    "title": "Real Madrid",
-    "description": "¡Te esperamos en esta fiesta llena de diversión!",
-    "video": "/videos/plim-plim.mp4",
-    "poster": "/videos/plim-plim.jpg",
-    "bgColor": "#0891b2",
-    "textColor": "#ffffff",
-    "buttonColor": "#f97316"
+    "id": "spiderman",
+    "title": "Spider-Man",
+    "description": "El sentido arácnido está en alerta.",
+    "category": "superheroes",
+    "tipo": "completa",
+    "video": "/videos/spiderman.mp4",
+    "poster": "/videos/spiderman.jpg",
+    "bgColor": "#623e61"
+  },
+  {
+    "id": "bluey",
+    "title": "Bluey",
+    "description": "Prepárate para jugar: correr, saltar y festejar a lo grande.",
+    "category": "infantil",
+    "tipo": "completa",
+    "video": "/videos/bluey.mp4",
+    "poster": "/videos/bluey.jpg",
+    "bgColor": "#73796b"
   },
   {
     "id": "colo-colo",
     "title": "Colo-Colo",
-    "description": "¡Te esperamos en esta fiesta llena de diversión!",
-    "video": "/videos/plim-plim.mp4",
-    "poster": "/videos/plim-plim.jpg",
-    "bgColor": "#0891b2",
-    "textColor": "#ffffff",
-    "buttonColor": "#f97316"
+    "description": "Más que un club, una pasión: el albo más chico cumple.",
+    "category": "futbol",
+    "tipo": "completa",
+    "video": "/videos/colo-colo.mp4",
+    "poster": "/videos/colo-colo.jpg",
+    "bgColor": "#2b3439"
   },
   {
-    "id": "colo-colo2",
-    "title": "Colo-Colo",
-    "description": "¡Te esperamos en esta fiesta llena de diversión!",
-    "video": "/videos/plim-plim.mp4",
-    "poster": "/videos/plim-plim.jpg",
-    "bgColor": "#0891b2",
-    "textColor": "#ffffff",
-    "buttonColor": "#f97316"
+    "id": "gabby",
+    "title": "Gabby y la Casa de Muñecas",
+    "description": "Todo el mundo de Gabby para invitar a celebrar.",
+    "category": "infantil",
+    "tipo": "simple",
+    "video": "/videos/gabby.mp4",
+    "poster": "/videos/gabby.jpg",
+    "bgColor": "#9f94ac"
   },
   {
-    "id": "colo-colo3",
-    "title": "Colo-Colo",
-    "description": "¡Te esperamos en esta fiesta llena de diversión!",
-    "video": "/videos/plim-plim.mp4",
-    "poster": "/videos/plim-plim.jpg",
-    "bgColor": "#0891b2",
-    "textColor": "#ffffff",
-    "buttonColor": "#f97316"
+    "id": "real-madrid",
+    "title": "Real Madrid",
+    "description": "¡Hala Madrid! Eres parte del equipo.",
+    "category": "futbol",
+    "tipo": "completa",
+    "video": "/videos/real-madrid.mp4",
+    "poster": "/videos/real-madrid.jpg",
+    "bgColor": "#a6a39b"
   },
   {
-    "id": "colo-colo4",
-    "title": "Colo-Colo",
-    "description": "¡Te esperamos en esta fiesta llena de diversión!",
+    "id": "blaze",
+    "title": "Blaze and the Monster Machines",
+    "description": "¡Motor a fondo para celebrar!",
+    "category": "infantil",
+    "tipo": "completa",
+    "video": "/videos/blaze.mp4",
+    "poster": "/videos/blaze.jpg",
+    "bgColor": "#5d6d59"
+  },
+  {
+    "id": "kpop-martina",
+    "title": "KPop Demon Hunters",
+    "description": "Luces de escenario y caza de demonios para celebrar.",
+    "category": "superheroes",
+    "tipo": "simple",
+    "video": "/videos/kpop-martina.mp4",
+    "poster": "/videos/kpop-martina.jpg",
+    "bgColor": "#71528c"
+  },
+  {
+    "id": "ucatolica",
+    "title": "Universidad Católica",
+    "description": "Cruzado por siempre: el peque cruzado cumple.",
+    "category": "futbol",
+    "tipo": "completa",
+    "video": "/videos/ucatolica.mp4",
+    "poster": "/videos/ucatolica.jpg",
+    "bgColor": "#364e55"
+  },
+  {
+    "id": "plim-plim",
+    "title": "Plim Plim",
+    "description": "Una fiesta mágica está por empezar.",
+    "category": "infantil",
+    "tipo": "completa",
     "video": "/videos/plim-plim.mp4",
     "poster": "/videos/plim-plim.jpg",
-    "bgColor": "#0891b2",
-    "textColor": "#ffffff",
-    "buttonColor": "#f97316"
+    "bgColor": "#70996f"
+  },
+  {
+    "id": "udechile",
+    "title": "Universidad de Chile",
+    "description": "Ser de la U no se explica, se siente.",
+    "category": "futbol",
+    "tipo": "completa",
+    "video": "/videos/udechile.mp4",
+    "poster": "/videos/udechile.jpg",
+    "bgColor": "#24313f"
   }
-
 ]

@@ -1,0 +1,309 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&amp;family=Instrument+Sans:wght@400;500;600&amp;display=swap">
+  <style>
+    body {
+      margin: 0;
+      background: #FAF4EA;
+      color: #1A1533;
+      font-family: "Instrument Sans", "Segoe UI", system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: #1A1533; text-decoration: none; }
+    a:hover { color: #C4436B; }
+    .display {
+      font-family: "Bricolage Grotesque", "Arial Black", "Helvetica Neue", sans-serif;
+      font-weight: 800;
+      letter-spacing: -0.035em;
+      line-height: 0.96;
+    }
+  </style>
+</helmet>
+
+<div style="position: relative; width: 390px; background: #FAF4EA; overflow: hidden">
+
+  <!-- ============ HEADER ============ -->
+  <div style="display: flex; align-items: center; justify-content: space-between; padding: 14px 20px; border-bottom: 1px solid rgba(26, 21, 51, 0.10)">
+    <img src="logo-max.png" alt="Max Invitaciones" style="height: 40px; width: auto; display: block">
+    <a href="#pedir" style="display: flex; align-items: center; justify-content: center; gap: 8px; height: 44px; padding: 0 18px; border-radius: 999px; background: #12B05A; color: #FFFFFF; font-size: 14px; font-weight: 600">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.4L3 20.5l1.7-5.5A8.4 8.4 0 1 1 21 11.5Z"></path>
+      </svg>
+      Escríbenos
+    </a>
+  </div>
+
+  <!-- ============ HERO ============ -->
+  <div style="position: relative; display: flex; flex-direction: column; gap: 20px; padding: 28px 20px 34px">
+    <div style="position: absolute; top: -90px; right: -110px; width: 280px; height: 280px; border-radius: 999px; background: {{accent}}; opacity: 0.18"></div>
+
+    <div style="position: relative; display: flex; align-items: center; gap: 8px; align-self: flex-start; height: 30px; padding: 0 12px; border-radius: 999px; background: {{accent}}; color: #1A1533; font-size: 11px; font-weight: 600">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#1A1533" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"></path>
+      </svg>
+      Invitaciones animadas · Chile
+    </div>
+
+    <h1 class="display" style="position: relative; margin: 0; font-size: 44px; text-wrap: balance">Tu fiesta merece una invitación que se mueva.</h1>
+
+    <p style="position: relative; margin: 0; font-size: 16px; line-height: 1.55; color: rgba(26, 21, 51, 0.72); text-wrap: pretty">
+      Video vertical de 15 segundos con el nombre, la fecha y la temática que elijas. Te llega listo para reenviar por WhatsApp.
+    </p>
+
+    <div style="position: relative; display: flex; flex-direction: column; gap: 10px">
+      <a href="#pedir" style="display: flex; align-items: center; justify-content: center; gap: 10px; height: 56px; border-radius: 999px; background: #12B05A; color: #FFFFFF; font-size: 17px; font-weight: 600; box-shadow: 0 10px 24px rgba(18, 176, 90, 0.26)">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.4L3 20.5l1.7-5.5A8.4 8.4 0 1 1 21 11.5Z"></path>
+        </svg>
+        Pedir mi invitación
+      </a>
+      <a href="#disenos" style="display: flex; align-items: center; justify-content: center; gap: 8px; height: 52px; border-radius: 999px; border: 1.5px solid rgba(26, 21, 51, 0.22); font-size: 16px; font-weight: 600">Ver los diseños</a>
+    </div>
+
+    <div style="position: relative; display: flex; flex-wrap: wrap; gap: 8px 14px; font-size: 13px; color: rgba(26, 21, 51, 0.58)">
+      <span>Entrega en [TIEMPO DE ENTREGA]</span>
+      <span>·</span>
+      <span>Desde [TU PRECIO]</span>
+    </div>
+
+    <!-- Par de tarjetas -->
+    <div style="position: relative; display: flex; gap: 12px; margin-top: 6px">
+      <div style="position: relative; flex-grow: 1; height: 300px; border-radius: 22px; overflow: hidden; background: #14524A; box-shadow: 0 16px 34px rgba(26, 21, 51, 0.22)">
+        <div style="position: absolute; top: -28px; left: -26px; width: 130px; height: 130px; border-radius: 999px; background: rgba(255, 255, 255, 0.13)"></div>
+        <div style="position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px">
+          <span class="display" style="font-size: 26px; color: #FAF4EA; text-transform: uppercase">Estadio</span>
+          <span style="font-size: 12px; color: rgba(250, 244, 234, 0.72)">Sofía cumple 7</span>
+        </div>
+        <div style="position: absolute; top: 10px; left: 10px; display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 999px; background: rgba(0, 0, 0, 0.44)">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="#FAF4EA">
+            <path d="M8 5v14l11-7z"></path>
+          </svg>
+        </div>
+      </div>
+      <div style="position: relative; flex-grow: 1; height: 300px; border-radius: 22px; overflow: hidden; background: #C4436B; box-shadow: 0 16px 34px rgba(26, 21, 51, 0.22)">
+        <div style="position: absolute; bottom: -30px; right: -26px; width: 140px; height: 140px; border-radius: 999px; background: rgba(255, 255, 255, 0.16)"></div>
+        <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center">
+          <span class="display" style="font-size: 24px; color: #FAF4EA; text-transform: uppercase">Princesas</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ CÓMO FUNCIONA ============ -->
+  <div id="como" style="background: #F3E6D2; padding: 34px 20px 38px; display: flex; flex-direction: column; gap: 22px">
+    <div style="display: flex; flex-direction: column; gap: 8px; border-top: 2px solid #1A1533; padding-top: 14px">
+      <span class="display" style="font-size: 13px; letter-spacing: 0.06em">01</span>
+      <h3 class="display" style="margin: 0; font-size: 23px">Eliges la temática</h3>
+      <p style="margin: 0; font-size: 15px; line-height: 1.55; color: rgba(26, 21, 51, 0.70)">Miras los diseños de abajo y nos dices cuál te gustó. Si no está, lo creamos.</p>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 8px; border-top: 2px solid #1A1533; padding-top: 14px">
+      <span class="display" style="font-size: 13px; letter-spacing: 0.06em">02</span>
+      <h3 class="display" style="margin: 0; font-size: 23px">Nos pasas los datos</h3>
+      <p style="margin: 0; font-size: 15px; line-height: 1.55; color: rgba(26, 21, 51, 0.70)">Nombre, edad, fecha, hora y dirección. Por WhatsApp, en un solo mensaje.</p>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 8px; border-top: 2px solid #1A1533; padding-top: 14px">
+      <span class="display" style="font-size: 13px; letter-spacing: 0.06em">03</span>
+      <h3 class="display" style="margin: 0; font-size: 23px">Reenvías el video</h3>
+      <p style="margin: 0; font-size: 15px; line-height: 1.55; color: rgba(26, 21, 51, 0.70)">Te llega listo en [TIEMPO DE ENTREGA] y lo mandas a todos tus grupos.</p>
+    </div>
+  </div>
+
+  <!-- ============ DISEÑOS ============ -->
+  <div id="disenos" style="position: relative; padding: 34px 20px 40px">
+    <h2 class="display" style="margin: 0 0 8px; font-size: 34px">Elige tu temática</h2>
+    <p style="margin: 0 0 18px; font-size: 15px; color: rgba(26, 21, 51, 0.66)">Toca una invitación para verla en movimiento.</p>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 22px">
+      <sc-for list="{{chips}}" as="chip" hint-placeholder-count="6">
+        <div onClick="{{chip.pick}}" style="display: flex; align-items: center; height: 44px; padding: 0 18px; border-radius: 999px; border: 1.5px solid {{chip.border}}; background: {{chip.bg}}; color: {{chip.color}}; font-size: 14px; font-weight: {{chip.weight}}; cursor: pointer">{{chip.label}}</div>
+      </sc-for>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px">
+      <sc-for list="{{cards}}" as="item" hint-placeholder-count="12">
+        <div style="position: relative; aspect-ratio: 9 / 16; border-radius: 20px; overflow: hidden; background: {{item.bg}}">
+
+          <sc-if value="{{item.vA}}" hint-placeholder-val="{{ true }}">
+            <div style="position: absolute; top: -30px; left: -26px; width: 110px; height: 110px; border-radius: 999px; background: rgba(255, 255, 255, 0.13)"></div>
+            <div style="position: absolute; bottom: 84px; right: -22px; width: 76px; height: 76px; border-radius: 999px; background: rgba(0, 0, 0, 0.16)"></div>
+          </sc-if>
+          <sc-if value="{{item.vB}}" hint-placeholder-val="{{ true }}">
+            <div style="position: absolute; top: 28px; right: -24px; width: 96px; height: 96px; border-radius: 20px; background: rgba(255, 255, 255, 0.12); transform: rotate(24deg)"></div>
+            <div style="position: absolute; top: 116px; left: -18px; width: 66px; height: 66px; border-radius: 16px; background: rgba(0, 0, 0, 0.14); transform: rotate(-16deg)"></div>
+          </sc-if>
+          <sc-if value="{{item.vC}}" hint-placeholder-val="{{ true }}">
+            <div style="position: absolute; top: 18px; left: 50%; width: 118px; height: 118px; margin-left: -59px; border-radius: 999px; border: 14px solid rgba(255, 255, 255, 0.12)"></div>
+            <div style="position: absolute; bottom: 78px; left: 12px; width: 54px; height: 54px; border-radius: 999px; background: rgba(0, 0, 0, 0.14)"></div>
+          </sc-if>
+
+          <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; padding: 0 10px">
+            <span class="display" style="font-size: 21px; line-height: 1.04; text-align: center; text-transform: uppercase; color: {{item.ink}}">{{item.label}}</span>
+          </div>
+
+          <div onClick="{{item.toggle}}" style="position: absolute; top: 8px; left: 8px; display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 999px; background: rgba(0, 0, 0, 0.46); cursor: pointer">
+            <sc-if value="{{item.playing}}" hint-placeholder-val="{{ true }}">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="#FAF4EA">
+                <path d="M6 5h4v14H6zM14 5h4v14h-4z"></path>
+              </svg>
+            </sc-if>
+            <sc-if value="{{item.parado}}" hint-placeholder-val="{{ true }}">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="#FAF4EA">
+                <path d="M8 5v14l11-7z"></path>
+              </svg>
+            </sc-if>
+          </div>
+
+          <sc-if value="{{item.playing}}" hint-placeholder-val="{{ true }}">
+            <div style="position: absolute; left: 0; right: 0; bottom: 0; display: flex; align-items: center; gap: 8px; padding: 12px; background: linear-gradient(to top, rgba(0, 0, 0, 0.66), rgba(0, 0, 0, 0))">
+              <div style="flex-grow: 1; height: 3px; border-radius: 999px; background: rgba(250, 244, 234, 0.30)">
+                <div style="width: 38%; height: 3px; border-radius: 999px; background: #FAF4EA"></div>
+              </div>
+              <span style="font-size: 10px; font-weight: 600; color: #FAF4EA">0:06</span>
+            </div>
+          </sc-if>
+
+          <sc-if value="{{item.parado}}" hint-placeholder-val="{{ true }}">
+            <div style="position: absolute; left: 0; right: 0; bottom: 0; display: flex; flex-direction: column; gap: 10px; padding: 14px 10px 10px; background: linear-gradient(to top, rgba(0, 0, 0, 0.86), rgba(0, 0, 0, 0.40) 58%, rgba(0, 0, 0, 0))">
+              <p style="margin: 0; font-size: 11px; line-height: 1.4; color: rgba(250, 244, 234, 0.88)">{{item.desc}}</p>
+              <a href="#pedir" style="display: flex; align-items: center; justify-content: center; gap: 6px; height: 44px; border-radius: 999px; background: #12B05A; color: #FFFFFF; font-size: 13px; font-weight: 600">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.4L3 20.5l1.7-5.5A8.4 8.4 0 1 1 21 11.5Z"></path>
+                </svg>
+                Pedir
+              </a>
+            </div>
+          </sc-if>
+        </div>
+      </sc-for>
+    </div>
+
+    <!-- Botón flotante de WhatsApp (queda fijo sobre el scroll) -->
+    <div style="position: absolute; right: 20px; bottom: 24px; display: flex; align-items: center; justify-content: center; width: 62px; height: 62px; border-radius: 999px; background: #12B05A; box-shadow: 0 12px 28px rgba(18, 176, 90, 0.42)">
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.4L3 20.5l1.7-5.5A8.4 8.4 0 1 1 21 11.5Z"></path>
+      </svg>
+    </div>
+  </div>
+
+  <!-- ============ OPINIONES ============ -->
+  <div id="opiniones" style="padding: 0 20px 36px; display: flex; flex-direction: column; gap: 14px">
+    <div style="display: flex; flex-direction: column; gap: 8px">
+      <h2 class="display" style="margin: 0; font-size: 30px">Lo que dicen</h2>
+      <span style="align-self: flex-start; display: flex; align-items: center; height: 26px; padding: 0 10px; border-radius: 999px; border: 1.5px dashed rgba(26, 21, 51, 0.35); font-size: 11px; font-weight: 600; color: rgba(26, 21, 51, 0.6)">Reemplazar con mensajes reales</span>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 12px">
+      <div style="display: flex; flex-direction: column; gap: 10px; padding: 20px; border-radius: 18px; border: 1.5px dashed rgba(26, 21, 51, 0.28)">
+        <p style="margin: 0; font-size: 15px; line-height: 1.5">[PEGA AQUÍ UN MENSAJE REAL DE UNA CLIENTA]</p>
+        <span style="font-size: 13px; font-weight: 600; color: rgba(26, 21, 51, 0.6)">— [Nombre], mamá de [Nombre]</span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 10px; padding: 20px; border-radius: 18px; border: 1.5px dashed rgba(26, 21, 51, 0.28)">
+        <p style="margin: 0; font-size: 15px; line-height: 1.5">[PEGA AQUÍ UN MENSAJE REAL DE UNA CLIENTA]</p>
+        <span style="font-size: 13px; font-weight: 600; color: rgba(26, 21, 51, 0.6)">— [Nombre], [Ciudad]</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ CTA FINAL ============ -->
+  <div id="pedir" style="margin: 0 20px 34px; border-radius: 26px; background: {{accent}}; padding: 32px 24px; display: flex; flex-direction: column; gap: 16px">
+    <h2 class="display" style="margin: 0; font-size: 36px; color: #1A1533">¿Para cuándo es la fiesta?</h2>
+    <p style="margin: 0; font-size: 16px; line-height: 1.5; color: rgba(26, 21, 51, 0.78)">Escríbenos con la fecha y la temática y te mostramos ejemplos hechos para tu celebración.</p>
+    <a href="https://wa.me/56987401906" style="display: flex; align-items: center; justify-content: center; gap: 10px; height: 58px; border-radius: 999px; background: #1A1533; color: #FAF4EA; font-size: 16px; font-weight: 600">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FAF4EA" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.4L3 20.5l1.7-5.5A8.4 8.4 0 1 1 21 11.5Z"></path>
+      </svg>
+      +56 9 8740 1906
+    </a>
+  </div>
+
+  <!-- ============ FOOTER ============ -->
+  <div style="border-top: 1px solid rgba(26, 21, 51, 0.12); padding: 28px 20px 34px; display: flex; flex-direction: column; gap: 18px">
+    <img src="logo-max.png" alt="Max Invitaciones" style="height: 40px; width: auto; display: block">
+    <p style="margin: 0; font-size: 14px; line-height: 1.55; color: rgba(26, 21, 51, 0.62)">Invitaciones digitales animadas para cumpleaños y eventos, hechas a tu medida.</p>
+    <div style="display: flex; flex-wrap: wrap; gap: 10px 20px">
+      <a href="https://wa.me/56987401906" style="font-size: 14px">WhatsApp</a>
+      <a href="#" style="font-size: 14px">Instagram [@tu_usuario]</a>
+      <a href="#" style="font-size: 14px">TikTok [@tu_usuario]</a>
+    </div>
+    <span style="font-size: 12px; color: rgba(26, 21, 51, 0.42)">© 2026 Max Invitaciones. Todos los derechos reservados.</span>
+  </div>
+</div>
+</x-dc>
+
+<script data-dc-script data-props='{"accent":{"editor":"color","default":"#F2A03C","options":["#F2A03C","#F0567B","#2FB79B","#6C4CF0"],"section":"Marca"}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { cat: 'todas', playing: null };
+  }
+
+  catalogo() {
+    return [
+      { id: 'estadio', label: 'Estadio', cat: 'futbol', bg: '#14524A', desc: 'Alineación titular con el nombre y la edad.' },
+      { id: 'clasico', label: 'Clásico', cat: 'futbol', bg: '#23306E', desc: 'Los colores de su equipo y el lugar del partido.' },
+      { id: 'superheroe', label: 'Superhéroe', cat: 'infantil', bg: '#AF2F2A', desc: 'Alerta en la ciudad: la misión es llegar.' },
+      { id: 'dinos', label: 'Dinosaurios', cat: 'infantil', bg: '#3D6B24', desc: 'Huellas, rugidos y expedición al patio.' },
+      { id: 'unicornio', label: 'Unicornio', cat: 'infantil', bg: '#7B3A8F', desc: 'Arcoíris, purpurina y un pastel mágico.' },
+      { id: 'autos', label: 'Autos', cat: 'infantil', bg: '#C05A16', desc: 'Semáforo en verde y a toda velocidad.' },
+      { id: 'selva', label: 'Selva', cat: 'infantil', bg: '#14603F', desc: 'Palmeras, tucanes y fiesta en la selva.' },
+      { id: 'princesas', label: 'Princesas', cat: 'princesas', bg: '#C4436B', desc: 'Castillo, vestido y cuento de hadas.' },
+      { id: 'hadas', label: 'Hadas', cat: 'princesas', bg: '#4B4FA6', desc: 'Luces suaves, alas y polvo mágico.' },
+      { id: 'neon', label: 'Neón 40', cat: 'adultos', bg: '#1A1533', desc: 'Neón para un cumpleaños que sale de casa.' },
+      { id: 'brindis', label: 'Brindis', cat: 'adultos', bg: '#8A5A18', desc: 'Copas, música y la dirección lista.' },
+      { id: 'baby', label: 'Baby shower', cat: 'baby', bg: '#2E6E8E', desc: 'Nubes suaves para anunciar quién viene.' }
+    ];
+  }
+
+  renderVals() {
+    const accent = this.props.accent ?? '#F2A03C';
+    const cat = this.state.cat;
+
+    const chips = [
+      { id: 'todas', label: 'Todas' },
+      { id: 'futbol', label: 'Fútbol' },
+      { id: 'infantil', label: 'Infantil' },
+      { id: 'princesas', label: 'Princesas' },
+      { id: 'adultos', label: 'Adultos' },
+      { id: 'baby', label: 'Baby shower' }
+    ].map((c) => {
+      const on = cat === c.id;
+      return {
+        label: c.label,
+        bg: on ? accent : 'transparent',
+        color: on ? '#1A1533' : 'rgba(26, 21, 51, 0.72)',
+        border: on ? accent : 'rgba(26, 21, 51, 0.18)',
+        weight: on ? '600' : '500',
+        pick: () => this.setState({ cat: c.id, playing: null })
+      };
+    });
+
+    const cards = this.catalogo()
+      .filter((c) => cat === 'todas' || c.cat === cat)
+      .map((c, i) => {
+        const playing = this.state.playing === c.id;
+        return {
+          label: c.label,
+          desc: c.desc,
+          bg: c.bg,
+          ink: '#FAF4EA',
+          playing: playing,
+          parado: !playing,
+          vA: i % 3 === 0,
+          vB: i % 3 === 1,
+          vC: i % 3 === 2,
+          toggle: () => this.setState({ playing: playing ? null : c.id })
+        };
+      });
+
+    return { accent: accent, chips: chips, cards: cards };
+  }
+}
+</script>
+</body>
+</html>

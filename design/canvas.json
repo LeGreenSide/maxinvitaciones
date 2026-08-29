@@ -1,0 +1,24 @@
+{
+  "artboards": [
+    { "file": "Main.dc.html", "title": "Home — escritorio", "x": 0, "y": 0, "w": 1440, "h": 4400, "is_interactive": true },
+    { "file": "Movil.dc.html", "title": "Home — móvil", "x": 1560, "y": 0, "w": 390, "h": 4900, "is_interactive": true },
+    { "file": "Estilo.dc.html", "title": "Sistema visual", "x": 2070, "y": 0, "w": 720, "h": 950 }
+  ],
+  "annotations": [
+    {
+      "id": "direccion",
+      "x": 0,
+      "y": -250,
+      "w": 520,
+      "text": "Fiesta editorial: papel cálido, titulares Bricolage Grotesque y bloques de color.\nLos filtros de temática y el play/pausa de cada tarjeta funcionan de verdad: pruébalos."
+    },
+    {
+      "id": "pendientes",
+      "x": 2070,
+      "y": -250,
+      "w": 460,
+      "text": "Todo lo que está entre [corchetes] son datos reales que faltan: precio, tiempo de entrega, testimonios y tus usuarios de Instagram y TikTok."
+    }
+  ],
+  "launch": { "view": "canvas" }
+}

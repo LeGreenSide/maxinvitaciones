@@ -4,8 +4,8 @@
   "description": "Invitaciones digitales animadas para cumpleaños y eventos.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#dbeafe",
-  "theme_color": "#172554",
+  "background_color": "#faf4ea",
+  "theme_color": "#faf4ea",
   "icons": [
     {
       "src": "/icon-192.png",

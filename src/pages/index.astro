@@ -1,21 +1,23 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Header from "../components/Header.astro";
+import Hero from "../components/Hero.astro";
+import HowItWorks from "../components/HowItWorks.astro";
 import Footer from "../components/Footer.astro";
-import MainTitle from "../components/MainTitle";
-import ImageGrid from "../components/ImageGrid";
 import InvitationsList from "../components/InvitationsList.jsx";
-//import InvitationCard from '../components/InvitationCard.jsx';
 ---
 
 <BaseLayout>
-	<main class="px-4 pb-12 flex flex-col gap-10">
-		<Header />
-		<MainTitle />
-		<ImageGrid interval={4000} client:load />
-		<section id="invitaciones">
+	<Header />
+	<main>
+		<Hero />
+		<section
+			id="invitaciones"
+			class="scroll-mt-6 px-5 py-14 sm:px-8 md:py-18 lg:px-20"
+		>
 			<InvitationsList client:load />
 		</section>
+		<HowItWorks />
 	</main>
 	<Footer />
 </BaseLayout>

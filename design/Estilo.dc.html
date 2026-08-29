@@ -1,0 +1,131 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&amp;family=Instrument+Sans:wght@400;500;600&amp;display=swap">
+  <style>
+    body {
+      margin: 0;
+      background: #FAF4EA;
+      color: #1A1533;
+      font-family: "Instrument Sans", "Segoe UI", system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: #1A1533; }
+    a:hover { color: #C4436B; }
+    .display {
+      font-family: "Bricolage Grotesque", "Arial Black", "Helvetica Neue", sans-serif;
+      font-weight: 800;
+      letter-spacing: -0.035em;
+      line-height: 0.96;
+    }
+    .etiqueta {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(26, 21, 51, 0.45);
+    }
+  </style>
+</helmet>
+
+<div style="width: 720px; background: #FAF4EA; padding: 40px; display: flex; flex-direction: column; gap: 34px">
+
+  <div style="display: flex; flex-direction: column; gap: 8px">
+    <span class="etiqueta">Sistema visual</span>
+    <h2 class="display" style="margin: 0; font-size: 40px">Fiesta editorial</h2>
+  </div>
+
+  <!-- Colores -->
+  <div style="display: flex; flex-direction: column; gap: 14px">
+    <span class="etiqueta">Base</span>
+    <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px">
+      <div style="display: flex; flex-direction: column; gap: 8px">
+        <div style="height: 68px; border-radius: 14px; background: #FAF4EA; border: 1px solid rgba(26, 21, 51, 0.14)"></div>
+        <span style="font-size: 13px; font-weight: 600">Papel</span>
+        <span style="font-size: 12px; color: rgba(26, 21, 51, 0.55)">#FAF4EA</span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px">
+        <div style="height: 68px; border-radius: 14px; background: #F3E6D2"></div>
+        <span style="font-size: 13px; font-weight: 600">Papel cálido</span>
+        <span style="font-size: 12px; color: rgba(26, 21, 51, 0.55)">#F3E6D2</span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px">
+        <div style="height: 68px; border-radius: 14px; background: #1A1533"></div>
+        <span style="font-size: 13px; font-weight: 600">Tinta</span>
+        <span style="font-size: 12px; color: rgba(26, 21, 51, 0.55)">#1A1533</span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px">
+        <div style="height: 68px; border-radius: 14px; background: #12B05A"></div>
+        <span style="font-size: 13px; font-weight: 600">WhatsApp</span>
+        <span style="font-size: 12px; color: rgba(26, 21, 51, 0.55)">#12B05A</span>
+      </div>
+    </div>
+
+    <span class="etiqueta" style="margin-top: 6px">Acentos (mismo croma, distinto tono)</span>
+    <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px">
+      <div style="display: flex; flex-direction: column; gap: 8px">
+        <div style="height: 52px; border-radius: 14px; background: #F2A03C"></div>
+        <span style="font-size: 12px; color: rgba(26, 21, 51, 0.55)">#F2A03C</span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px">
+        <div style="height: 52px; border-radius: 14px; background: #F0567B"></div>
+        <span style="font-size: 12px; color: rgba(26, 21, 51, 0.55)">#F0567B</span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px">
+        <div style="height: 52px; border-radius: 14px; background: #2FB79B"></div>
+        <span style="font-size: 12px; color: rgba(26, 21, 51, 0.55)">#2FB79B</span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px">
+        <div style="height: 52px; border-radius: 14px; background: #6C4CF0"></div>
+        <span style="font-size: 12px; color: rgba(26, 21, 51, 0.55)">#6C4CF0</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tipografía -->
+  <div style="display: flex; flex-direction: column; gap: 14px; border-top: 1px solid rgba(26, 21, 51, 0.14); padding-top: 24px">
+    <span class="etiqueta">Tipografía</span>
+    <div style="display: flex; flex-direction: column; gap: 6px">
+      <span class="display" style="font-size: 54px">Bricolage Grotesque 800</span>
+      <span style="font-size: 13px; color: rgba(26, 21, 51, 0.55)">Titulares · interletrado −0.035em · interlínea 0.94</span>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 6px; margin-top: 8px">
+      <span style="font-size: 19px; line-height: 1.55; color: rgba(26, 21, 51, 0.78)">Instrument Sans 400 / 500 / 600 — texto de apoyo, botones y datos de la fiesta.</span>
+      <span style="font-size: 13px; color: rgba(26, 21, 51, 0.55)">Cuerpo 16–19px · secundario 13–15px</span>
+    </div>
+  </div>
+
+  <!-- Componentes -->
+  <div style="display: flex; flex-direction: column; gap: 16px; border-top: 1px solid rgba(26, 21, 51, 0.14); padding-top: 24px">
+    <span class="etiqueta">Componentes</span>
+    <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px">
+      <div style="display: flex; align-items: center; gap: 10px; height: 56px; padding: 0 28px; border-radius: 999px; background: #12B05A; color: #FFFFFF; font-size: 16px; font-weight: 600">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.4L3 20.5l1.7-5.5A8.4 8.4 0 1 1 21 11.5Z"></path>
+        </svg>
+        Acción principal
+      </div>
+      <div style="display: flex; align-items: center; height: 56px; padding: 0 26px; border-radius: 999px; border: 1.5px solid rgba(26, 21, 51, 0.22); font-size: 16px; font-weight: 600">Secundaria</div>
+      <div style="display: flex; align-items: center; height: 46px; padding: 0 22px; border-radius: 999px; background: #F2A03C; font-size: 15px; font-weight: 600">Filtro activo</div>
+      <div style="display: flex; align-items: center; height: 46px; padding: 0 22px; border-radius: 999px; border: 1.5px solid rgba(26, 21, 51, 0.18); font-size: 15px; font-weight: 500; color: rgba(26, 21, 51, 0.72)">Filtro</div>
+    </div>
+    <div style="display: flex; flex-wrap: wrap; gap: 20px; font-size: 14px; color: rgba(26, 21, 51, 0.62)">
+      <span>Radio tarjeta 22px</span>
+      <span>·</span>
+      <span>Radio botón 999px</span>
+      <span>·</span>
+      <span>Alto mínimo de toque 44px</span>
+      <span>·</span>
+      <span>Tarjeta 9:16</span>
+    </div>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

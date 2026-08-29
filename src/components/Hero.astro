@@ -1,0 +1,163 @@
+---
+import { existsSync } from "node:fs";
+import HeroCarousel from "./HeroCarousel.jsx";
+import invitations from "../data/invitations.json";
+
+const ids =["plim-plim", "real-madrid", "kpop-martina"];
+
+const destacadas = ids.map((id) => {
+    const invitacion = invitations.find((inv) => inv.id === id);
+    if (!invitacion) {
+        throw new Error(
+            `Hero: no existe la invitación "${id}" en invitations.json`,
+        );
+    }
+
+    const liviano =invitacion.video.replace(/\.mp4$/, "-hero.mp4");
+    if (!existsSync(`public${liviano}`)) {
+        throw new Error(
+            `Hero: falta public${liviano}. Genéralo con ffmpeg: ` +
+                `scale=360:640, crf 30, -an`,
+        );
+    }
+
+    return { ...invitacion, video: liviano };
+});
+
+---
+
+<section
+    class="relative overflow-hidden px-5 pb-14 pt-10 sm:px-8 md:pb-20 md:pt-14 lg:px-20"
+>
+    <div
+        class="pointer-events-none absolute -left-32 -top-32 h-[420px] w-[420px] rounded-full bg-acento/20"
+        aria-hidden="true"
+    >
+    </div>
+
+    <div
+        class="relative grid items-center gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,520px)] lg:gap-x-14 lg:gap-y-6"
+    >
+        <div
+            class="order-1 flex flex-col items-start gap-5 lg:order-1 lg:col-start-1 lg:row-start-1 lg:gap-6"
+        >
+            <span
+                class="flex h-8 items-center gap-2 rounded-full bg-acento px-3.5 text-[13px] font-semibold"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="h-3.5 w-3.5 shrink-0"
+                    aria-hidden="true"
+                >
+                    <path
+                        d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"
+                    ></path>
+                </svg>
+                Invitaciones digitales animadas
+            </span>
+
+            <h1
+                class="titular max-w-[700px] text-balance text-5xl sm:text-6xl lg:text-7xl xl:text-[88px]"
+            >
+                Tu cumple merece una invitación que se <span
+                    class="mueve"
+                    aria-label="mueva"
+                    >{
+                        "mueva".split("").map((letra, i) => (
+                            <span aria-hidden="true" style={`--i: ${i}`}>
+                                {letra}
+                            </span>
+                        ))
+                    }</span
+                >.
+            </h1>
+        </div>
+
+        <div
+            class="order-2 lg:order-3 lg:col-start-2 lg:row-start-1 lg:row-span-2"
+        >
+            <HeroCarousel items={destacadas} client:load />
+        </div>
+
+        <div
+            class="order-3 flex flex-col items-start gap-5 lg:order-2 lg:col-start-1 lg:row-start-2 lg:gap-6"
+        >
+            <p
+                class="order-2 max-w-[560px] text-pretty text-[17px] leading-relaxed text-tinta/70 md:text-[19px] lg:order-1"
+            >
+                Eliges la que más te gusta y
+                personalizamos el nombre, ilustraciones, la fecha y los detalles de tu cumple.
+                Te llega lista para reenviar por WhatsApp.
+            </p>
+
+            <div class="order-1 flex flex-col gap-3 sm:flex-row sm:items-center lg:order-2">
+                <a
+                    href="#invitaciones"
+                    class="group flex h-14 items-center justify-center gap-2.5 rounded-full bg-tinta px-8 text-[17px] font-semibold text-papel shadow-[0_6px_18px_rgba(26,21,51,0.22)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#2a2350] hover:shadow-[0_12px_26px_rgba(26,21,51,0.32)]"
+                >
+                    Ver las invitaciones
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="h-[18px] w-[18px] shrink-0 transition-transform duration-200 group-hover:translate-x-1"
+                        aria-hidden="true"
+                    >
+                        <path d="M5 12h14M13 6l6 6-6 6"></path>
+                    </svg>
+                </a>
+            </div>
+
+            <ul
+                class="order-3 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-tinta-2"
+            >
+                <li>Personalizamos textos, datos e ilustraciones</li>
+                <li class="hidden sm:block" aria-hidden="true">·</li>
+                <li>Te llega por WhatsApp</li>
+                <li class="hidden sm:block" aria-hidden="true">·</li>
+                <li>Lista para reenviar</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<style>
+    .mueve span {
+        display: inline-block;
+        animation: onda 3.2s ease-in-out infinite;
+        animation-delay: calc(var(--i) * 70ms);
+    }
+
+    @keyframes onda {
+        0%,
+        52%,
+        100% {
+            transform: translateY(0) rotate(0deg);
+        }
+        60% {
+            transform: translateY(-0.16em) rotate(-5deg);
+        }
+        68% {
+            transform: translateY(0.02em) rotate(3deg);
+        }
+        76% {
+            transform: translateY(-0.05em) rotate(0deg);
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .mueve span {
+            animation: none;
+        }
+    }
+</style>
