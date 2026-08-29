@@ -65,28 +65,24 @@ const TARJETAS = [
     {
         poster: 'videos/coquimbo-unido.jpg',
         titulo: 'Coquimbo Unido',
-        etiqueta: 'Completa',
         precio: '$10.000',
         duracion: '0:22',
     },
     {
         poster: 'videos/kpop-martina.jpg',
         titulo: 'KPop Demon Hunters',
-        etiqueta: 'Simple',
         precio: '$5.000',
         duracion: '0:07',
     },
     {
         poster: 'videos/colo-colo.jpg',
         titulo: 'Colo-Colo',
-        etiqueta: 'Completa',
         precio: '$10.000',
         duracion: '0:21',
     },
     {
         poster: 'videos/spiderman.jpg',
         titulo: 'Spider-Man',
-        etiqueta: 'Completa',
         precio: '$10.000',
         duracion: '0:19',
     },
@@ -174,25 +170,22 @@ const Tarjeta = ({ datos, elegida, toque, onda }) => {
                 <span
                     style={{
                         fontFamily: TEXTO,
-                        fontSize: 17,
-                        fontWeight: 700,
-                        letterSpacing: 1,
-                        textTransform: 'uppercase',
-                        color: ACENTO,
-                    }}
-                >
-                    {datos.etiqueta}
-                    <span style={{ color: PAPEL }}> · {datos.precio}</span>
-                </span>
-                <span
-                    style={{
-                        fontFamily: TEXTO,
                         fontSize: 21,
                         fontWeight: 600,
                         color: PAPEL,
                     }}
                 >
                     {datos.titulo}
+                </span>
+                <span
+                    style={{
+                        fontFamily: TEXTO,
+                        fontSize: 20,
+                        fontWeight: 700,
+                        color: PAPEL,
+                    }}
+                >
+                    {datos.precio}
                 </span>
                 <div
                     style={{
