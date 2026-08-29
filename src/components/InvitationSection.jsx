@@ -162,6 +162,17 @@ const InvitationSection = ({ data }) => {
                 className="absolute inset-0 block h-full w-full object-cover"
             />
 
+            <img
+                src={data.poster}
+                alt=""
+                width="720"
+                height="1280"
+                aria-hidden="true"
+                className={`pointer-events-none absolute inset-0 block h-full w-full object-cover transition-opacity duration-300 ${
+                    isPlaying ? 'opacity-0' : 'opacity-100'
+                }`}
+            />
+
             <button
                 onClick={isPlaying ? handlePauseClick : handlePlayClick}
                 className="absolute left-3 top-3 flex h-11 w-11 items-center justify-center rounded-full bg-black/45 backdrop-blur-sm transition-colors hover:bg-black/65"
