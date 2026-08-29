@@ -229,10 +229,10 @@ const InvitationSection = ({ data }) => {
                 )}
 
                 <div
-                    className={`mt-1.5 flex flex-col gap-2 @min-[12rem]:flex-row @min-[12rem]:items-center ${
+                    className={`mt-1.5 flex-col gap-2 @min-[12rem]:flex-row @min-[12rem]:items-center ${
                         isPlaying
-                            ? '@min-[12rem]:justify-end'
-                            : '@min-[12rem]:justify-between'
+                            ? 'hidden @min-[12rem]:flex @min-[12rem]:justify-end'
+                            : 'flex @min-[12rem]:justify-between'
                     }`}
                 >
                     {!isPlaying && precio && (
