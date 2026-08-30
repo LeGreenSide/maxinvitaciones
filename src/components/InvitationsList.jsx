@@ -9,7 +9,7 @@ const InvitationsList = () => (
   <div>
     <div className="mb-6 flex flex-col gap-2">
       <h2 className="titular text-4xl md:text-5xl lg:text-[54px]">
-        Elige tu invitación
+        Elige tu invitación digital animada
       </h2>
       <p className="text-[17px] text-tinta-2">
         Dale play a una invitación para verla en movimiento.

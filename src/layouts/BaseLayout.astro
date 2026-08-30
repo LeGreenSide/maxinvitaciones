@@ -9,8 +9,8 @@ interface Props {
 }
 
 const {
-    title = "Max Invitaciones | Invitaciones digitales animadas para cumpleaños y eventos",
-    description = "Crea invitaciones digitales animadas y personalizadas para cumpleaños y eventos. Diseños de fútbol, princesas y muchos más, listas para compartir por WhatsApp.",
+    title = "Invitaciones digitales para cumpleaños | Max Invitaciones",
+    description = "Elige tu invitación digital animada y la personalizamos con los datos del cumpleaños. Podemos ilustrar al cumpleañero desde su foto. Te llega por WhatsApp.",
     image = "/max_invi.png",
 } = Astro.props;
 
@@ -51,6 +51,7 @@ const ogImageURL = new URL(image, Astro.site);
             "description": description,
             "image": ogImageURL.toString(),
             "url": Astro.site?.toString(),
+            "telephone": "+56987401906",
             "areaServed": "CL",
             "priceRange": "$$",
         })} />

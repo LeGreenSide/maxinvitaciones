@@ -164,10 +164,9 @@ const InvitationSection = ({ data }) => {
 
             <img
                 src={data.poster}
-                alt=""
+                alt={`Invitación de cumpleaños ${data.title} animada`}
                 width="720"
                 height="1280"
-                aria-hidden="true"
                 className={`pointer-events-none absolute inset-0 block h-full w-full object-cover transition-opacity duration-300 ${
                     isPlaying ? 'opacity-0' : 'opacity-100'
                 }`}
