@@ -221,7 +221,7 @@ const InvitationSection = ({ data }) => {
                         <h3 className="line-clamp-2 text-[15px] font-semibold leading-tight text-papel sm:text-[17px] lg:text-[19px]">
                             {data.title}
                         </h3>
-                        <p className="line-clamp-2 text-[12px] leading-snug text-papel/80 sm:text-[13px] lg:text-[14px]">
+                        <p className="line-clamp-2 text-[13px] leading-snug text-papel/80 sm:text-[13px] lg:text-[14px]">
                             {data.description}
                         </p>
                     </>
