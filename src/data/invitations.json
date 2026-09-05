@@ -1,12 +1,12 @@
 [
   {
-    "id": "pokemon",
-    "title": "Pokémon",
-    "description": "¡Tu aventura Pokémon está por comenzar!",
+    "id": "pokemon-charizard",
+    "title": "Pokémon Charizard",
+    "description": "Charizard enciende la aventura: ¡a atraparlos todos!",
     "category": "infantil",
     "tipo": "completa",
-    "video": "/videos/pokemon.mp4",
-    "poster": "/videos/pokemon.jpg",
+    "video": "/videos/pokemon-charizard.mp4",
+    "poster": "/videos/pokemon-charizard.jpg",
     "bgColor": "#5c412e"
   },
   {
