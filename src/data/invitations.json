@@ -1,5 +1,15 @@
 [
   {
+    "id": "pokemon",
+    "title": "Pokémon",
+    "description": "¡Tu aventura Pokémon está por comenzar!",
+    "category": "infantil",
+    "tipo": "completa",
+    "video": "/videos/pokemon.mp4",
+    "poster": "/videos/pokemon.jpg",
+    "bgColor": "#5c412e"
+  },
+  {
     "id": "piratas-marcelino",
     "title": "Coquimbo Unido",
     "description": "¡Cumplen los piratas más buscados del Caribe!",
